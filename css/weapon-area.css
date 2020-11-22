@@ -1,0 +1,265 @@
+:root{
+  --main-color: #131313;
+  --point-color: #f2a900;
+  --strong-color: #ff8a00;
+  --light-color: #f6ce68;
+  --point-font: 'Teko', sans-serif;
+  --weapon-deep-blue: #373853;
+  --weapon-deep-black: #161616;
+}
+
+/* -------------------- weapon --------------------- */
+#weapon {
+  width: 100vw;
+  height: 450px;
+  background: linear-gradient(
+    135deg,
+    var(--weapon-deep-black) 40%,
+    var(--weapon-deep-blue)
+  );
+  position: relative;
+  transition: all .35s;
+  -webkit-transition: all .35s;
+}
+#weapon-in {
+  width: 100%;
+  height: 300px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+.weapon-wrap {
+  width: 100%;
+  height: 300px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+.weapon-wrap2 {
+  width: 100%;
+  height: 300px;
+  left: 0;
+  margin: 0 auto;
+  position: absolute;
+  overflow: hidden;
+  top: -320px;
+}
+
+.slider-container {
+  position: absolute;
+  height: 300px;
+  width: 100%;
+  /* padding: 0 10%; */
+  box-sizing: border-box;
+  /* overflow: hidden; */
+}
+
+.slider-container.animated {
+  -webkit-transition: left 0.3s ease-in;
+  transition: left 0.3s ease-in;
+}
+.slider-container.animated.none {
+  display: none;
+}
+
+/* ----------!!!!!!무기종류 slider!!!!!!---------- */
+
+.slider {
+  width: 100%;
+  padding: 0 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  /* left: 50%; */
+  /* transform: translateX(-50%); */
+  box-sizing: border-box;
+  /* display: none; */
+}
+/* ----------무기종류 slider END!!!!!---------- */
+
+.weapon-img,
+.weapon-img img {
+  width: 300px;
+}
+.weapon-img img {
+  transform: rotate(-15deg);
+}
+.slide-tx {
+  width: 500px;
+  color: white;
+}
+.slide-tx h4 {
+  font-size: 50px;
+  font-weight: normal;
+  font-family: var(--point-font);
+  margin: 0;
+}
+/* waepon nav */
+.type {
+  z-index: 2;
+  width:80px;
+  text-align: center;
+  color: white;
+  /* font-weight: bold; */
+}
+
+.type_wrap{
+  display:flex;
+  flex-wrap: wrap;
+}
+
+#weapon-type-box {
+  max-width: 1280px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translate(-50%);
+}
+#weapon-type-nav {
+  display: flex;
+  /* flex-wrap: wrap; */
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  margin: 0 100px;
+  margin-bottom: 30px;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+  width: 100%;
+}
+#weapon-type-nav li {
+  width: 100%;
+  font-family: var(--point-font);
+  font-size: 28px;
+  list-style: none;
+  cursor: pointer;
+}
+
+#prev-nex-wrap {
+  max-width: 1280px;
+  width: 100%;
+  position: absolute;
+  z-index: 999;
+  left: 50%;
+  top: 30%;
+  transform: translate(-50%);
+}
+
+#prev-nex-in {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#prev,
+#nex {
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+
+#prev {
+  cursor: pointer;
+}
+#nex {
+  cursor: pointer;
+}
+
+#prev.disabled,
+#nex.disabled {
+  display: none;
+}
+#prev img, #nex img{
+  width: 120px;
+}
+
+@media screen and (max-width: 1080px){
+  .weapon-wrap2{
+    top:-330px;
+  }
+}
+@media screen and (max-width: 786px){
+  #weapon{
+    height: 600px;
+  }
+  
+  .weapon-wrap2{
+    top: -430px;
+    height: 600px;
+  }
+  .weapon-img, .weapon-img img{
+    width: 250px;
+  }
+  .weapon-img{
+    height:220px;
+  }
+  #prev img, #nex img{
+    width: 90px;
+  }
+  #prev-nex-wrap{
+    top:40%;
+  }
+  .slider{
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 0;
+  }
+  .slide-tx{
+    max-width: 350px;
+    text-align:center;
+  }
+  #weapon-type-nav{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width:450px;
+  }
+  #weapon-type-nav li{
+    margin: 0 20px;
+  }
+
+
+}
+@media screen and (max-width: 480px) {
+  #weapon{
+    height: 630px;
+  }
+  
+  .weapon-wrap2{
+    top: -430px;
+    height:430px;
+  }
+  #weapon-type-nav{
+    margin-bottom:10px;
+    min-width: 270px;
+  }
+  .weapon-img, .weapon-img img{
+    width: 250px;
+  }
+  .weapon-img{
+    height:220px;
+  }
+  #prev img, #nex img{
+    width: 90px;
+  }
+  #prev-nex-wrap{
+    top:40%;
+  }
+  .slider{
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 0;
+  }
+  .slide-tx{
+    max-width: 300px;
+    text-align:center;
+  }
+  .slide-tx br{
+    display:none;
+  }
+  
+}
+
